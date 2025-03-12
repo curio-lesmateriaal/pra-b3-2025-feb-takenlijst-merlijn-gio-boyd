@@ -2,15 +2,15 @@
 <html lang="nl">
 
 <head>
-    <title></title>
+    <title>testpagina</title>
     <?php require_once 'resources/views/head.php'; ?>
 </head>
 
 <body>
     <?php require_once 'resources/views/header.php'; ?>
     <div class="container">
-
-        <p>test</p>
+        <h2>TestPagina</h2>
+        <p>Dit is een test pagina.</p>
     </div>
 
 </body>
