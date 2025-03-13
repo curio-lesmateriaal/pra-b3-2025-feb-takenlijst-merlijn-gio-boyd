@@ -9,7 +9,7 @@
 <body>
     <?php require_once 'resources/views/header.php'; ?>
     <div class="container">
-
+        
         <p>test</p>
     </div>
 

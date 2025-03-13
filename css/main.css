@@ -367,4 +367,14 @@
   
   tr:first-child {
     background-color: red;
-   }
+  }
+
+.select-board{
+  display: flex;
+  justify-content: center;
+}
+select {
+  margin-top: 20px;
+  width: 700px;
+  height: 40px;
+}
