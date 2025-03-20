@@ -50,11 +50,41 @@
 
             <div class="colum">
                 <h2 style="border-bottom: 3px solid greenyellow;">Doing</h2>
+                <?php
+                $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'doing'";
+                $statement = $conn->prepare($query);
+                $statement ->execute([":afdeling" => $afdeling]);
+                $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
+                ?>
+
+                <?php foreach ($meldingen as $melding): ?>
+                    <div class="card" id="<?php echo $melding['id'] ?>">
+                        <div class="top" style="background-color: greenyellow;"></div>
+                        <h3><?php echo $melding['id'] . ' - ' . $melding['titel']; ?></h3>
+                        
+                        
+                    </div>   
+                <?php endforeach; ?>
 
             </div>
 
             <div class="colum">
                 <h2 style="border-bottom: 3px solid greenyellow;">Done</h2>
+                <?php
+                $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'done'";
+                $statement = $conn->prepare($query);
+                $statement ->execute([":afdeling" => $afdeling]);
+                $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
+                ?>
+
+                <?php foreach ($meldingen as $melding): ?>
+                    <div class="card" id="<?php echo $melding['id'] ?>">
+                        <div class="top" style="background-color: greenyellow;"></div>
+                        <h3><?php echo $melding['id'] . ' - ' . $melding['titel']; ?></h3>
+                        
+                        
+                    </div>   
+                <?php endforeach; ?>
 
             </div>
             
