@@ -42,7 +42,7 @@
                     <div class="card" id="<?php echo $melding['id'] ?>">
                         <div class="top" style="background-color: greenyellow;"></div>
                         <h3><?php echo $melding['id'] . ' - ' . $melding['titel']; ?></h3>
-                        
+                        <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
                         
                     </div>   
                 <?php endforeach; ?>
@@ -61,7 +61,7 @@
                     <div class="card" id="<?php echo $melding['id'] ?>">
                         <div class="top" style="background-color: greenyellow;"></div>
                         <h3><?php echo $melding['id'] . ' - ' . $melding['titel']; ?></h3>
-                        
+                        <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
                         
                     </div>   
                 <?php endforeach; ?>
@@ -81,7 +81,7 @@
                     <div class="card" id="<?php echo $melding['id'] ?>">
                         <div class="top" style="background-color: greenyellow;"></div>
                         <h3><?php echo $melding['id'] . ' - ' . $melding['titel']; ?></h3>
-                        
+                        <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
                         
                     </div>   
                 <?php endforeach; ?>
@@ -96,7 +96,7 @@
         //afdeling manager:
         document.getElementById("boordNaam").addEventListener('change',() =>{
             let naam =document.getElementById('boordNaam').value;
-            window.location.href ="boord.php?afdeling="+naam;
+            window.location.href ="board.php?afdeling="+naam;
         })
     </script>
 </body>
