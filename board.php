@@ -46,6 +46,7 @@
                         
                     </div>   
                 <?php endforeach; ?>
+                <button class="cButton" onclick="button()">+</button>
             </div>
 
             <div class="colum">
@@ -65,7 +66,7 @@
                         
                     </div>   
                 <?php endforeach; ?>
-
+                <button class="cButton" onclick="button()">+</button>
             </div>
 
             <div class="colum">
@@ -85,7 +86,7 @@
                         
                     </div>   
                 <?php endforeach; ?>
-
+                <button class="cButton" onclick="button()">+</button>
             </div>
             
         </div>
@@ -93,6 +94,10 @@
 
 
     <script>
+        //create.php
+        function button() {
+            window.location.href = "create.php";
+        }
         //afdeling manager:
         document.getElementById("boordNaam").addEventListener('change',() =>{
             let naam =document.getElementById('boordNaam').value;

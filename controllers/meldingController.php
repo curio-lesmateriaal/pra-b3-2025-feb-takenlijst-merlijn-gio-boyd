@@ -2,8 +2,33 @@
 $action = $_POST['action'];
 
 if($action == 'create') {
+    $titel = $_POST['titel'];
+    $status = $_POST['status'];
+    $afdeling = $_POST['afdeling'];
+    $beschrijving = $_POST['beschrijving'];
 
+    //1. Verbinding
+    require_once '../backend/conn.php';
+
+    //2. Query
+    $query = "INSERT INTO taken (titel, beschrijving, afdeling, status)
+        VALUES(:titel, :beschrijving, :afdeling, :status)";
+
+    //3. prepare
+    $statement = $conn->prepare($query);
+
+    //4. excute
+    $statement->execute([
+        ":titel" => $titel,
+        ":beschrijving" => $beschrijving,
+        ":afdeling" => $afdeling,
+        ":status" => $status,
+    ]);
+
+    //index
+    header("Location:'/../../board.php?afdeling=horeca");
 }
+
 if($action == 'edit') {
     $id = $_POST['id'];
     $titel = $_POST['titel'];
@@ -29,6 +54,6 @@ if($action == 'edit') {
         ":titel" => $titel,
         ":id" => $id
     ]);
-    header("Location: ../board.php?msg=Melding aangepast");
+    header("Location:'/../../board.php?afdeling=horeca");
 }
 ?>
