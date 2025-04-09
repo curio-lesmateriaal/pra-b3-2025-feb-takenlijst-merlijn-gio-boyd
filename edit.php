@@ -33,6 +33,11 @@
             </div>
 
             <input type="submit" value="Melding opslaan">
+            <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
+            <input type="hidden" name="action" value="delete">
+            <input type="hidden" name="id" value="<?php echo $id;?>">
+            <input type="submit" value="Verwijderen">
+        </form>
         </form>
     </div>
 

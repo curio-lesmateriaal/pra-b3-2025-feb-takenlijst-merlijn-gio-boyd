@@ -56,4 +56,27 @@ if($action == 'edit') {
     ]);
     header("Location:'/../../board.php?afdeling=horeca");
 }
+if ($action == 'delete' ) {
+    //voer deze code uit als action delete is
+    $id = $_POST['id'];
+    //1. Verbinding
+    require_once '../backend/conn.php';
+
+    //2. Query
+    $query = "
+        DELETE FROM taken
+        WHERE id = :id
+        ";
+
+        //3. Prepare
+        $statement = $conn->prepare($query);
+
+        //4. Execute
+        $statement->execute([
+            ":id" => $id
+        ]);
+        header("Location:'/../../board.php?afdeling=horeca");
+
+}
+
 ?>
