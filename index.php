@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="grid-item">
-                    <a href="<?php echo $base_url; ?>/board.php?afdeling=groen"></a><button class="groen">GROEN</button></a>
+                    <a href="<?php echo $base_url; ?>/board.php?afdeling=groen"><button class="groen">GROEN</button></a>
                 </div>
 
                 <div class="grid-item">
