@@ -59,7 +59,7 @@
             </div>
 
             <div class="colum">
-                <h2 style="border-bottom: 3px solid greenyellow;">Doing</h2>
+                <h2 style="border-bottom: 3px solid orange;">Doing</h2>
                 <?php
                 //doing
                 if ($afdeling === 'alles') {
@@ -77,7 +77,7 @@
                 <div class="card-container">
                     <?php foreach ($meldingen as $melding): ?>
                         <div class="card" id="<?php echo $melding['id'] ?>">
-                            <div class="top" style="background-color: greenyellow;"></div>
+                            <div class="top" style="background-color: orange;"></div>
                             <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling']; ?></h3>
                             <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
                         </div>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="colum">
-                <h2 style="border-bottom: 3px solid greenyellow;">Done</h2>
+                <h2 style="border-bottom: 3px solid purple;">Done</h2>
                 <?php
                 //done
                 if ($afdeling === 'alles') {
@@ -104,7 +104,7 @@
                 <div class="card-container">
                     <?php foreach ($meldingen as $melding): ?>
                         <div class="card" id="<?php echo $melding['id'] ?>">
-                            <div class="top" style="background-color: greenyellow;"></div>
+                            <div class="top" style="background-color: purple;"></div>
                             <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling']; ?></h3>
                             <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
                         </div>
