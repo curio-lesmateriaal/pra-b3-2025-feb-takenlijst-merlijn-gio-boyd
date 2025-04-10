@@ -9,7 +9,7 @@
             <a href="<?php echo $base_url; ?>/board.php?afdeling=inkoop">Inkoop</a>
             <a href="<?php echo $base_url; ?>/board.php?afdeling=klantenservice">Klantenservice</a>
             <a href="<?php echo $base_url; ?>/board.php?afdeling=groen">Groen</a>
-
+            <a href="<?php echo $base_url; ?>/board.php?afdeling=alles">Alles</a>
         </nav>
     </div>
 </header>

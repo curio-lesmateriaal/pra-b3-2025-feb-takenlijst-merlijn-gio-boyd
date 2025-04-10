@@ -5,7 +5,6 @@
     <title></title>
     <?php require_once 'resources/views/head.php'; ?>
 </head>
-
 <body>
     <?php require_once 'resources/views/header.php'; ?>
     <main>
@@ -16,6 +15,7 @@
             } ?>
 
             <h1>BOARDEN</h1>
+            <a href="<?php echo $base_url; ?>/board.php?afdeling=alles"><button class="center">TOON ALLE BOARDEN</button></a>
             <div class="grid-container">
                 <div class="grid-item">
                     <a href="<?php echo $base_url; ?>/board.php?afdeling=horeca"><button class="horeca">HORECA</button></a>

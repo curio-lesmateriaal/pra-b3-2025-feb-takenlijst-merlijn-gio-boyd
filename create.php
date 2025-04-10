@@ -27,7 +27,6 @@
             <div class="form-group">
                 <label for="status">Status</label>
                 <select name="status">
-                    <option value="">kies een status:</option>
                     <option value="todo">Todo</option>
                     <option value="doing">Doing</option>
                     <option value="done">Done</option>
@@ -37,7 +36,6 @@
             <div class="form-group">
                 <label for="afdeling">Afdeling</label>
                 <select name="afdeling">
-                    <option value="">kies een afdeling</option>
                     <option value="horeca">Horeca</option>
                     <option value="personeel">Personeel</option>
                     <option value="techniek">Techniek</option>

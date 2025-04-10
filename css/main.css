@@ -11,13 +11,13 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-   html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-  }
-  
-  /*
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
    * Remove text-shadow in selection highlight:
    * https://twitter.com/miketaylr/status/12228805301
    *
@@ -26,177 +26,178 @@
    *
    * Customize the background color to match your design.
    */
-  
-  ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
-  
-  ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
-  
-  /*
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
    * A better looking default horizontal rule
    */
-  
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-  }
-  
-  /*
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
    * Remove the gap between audio, canvas, iframes,
    * images, videos and the bottom of their containers:
    * https://github.com/h5bp/html5-boilerplate/issues/440
    */
-  
-  audio,
-  canvas,
-  iframe,
-  img,
-  svg,
-  video {
-    vertical-align: middle;
-  }
-  
-  /*
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
    * Remove default fieldset styles.
    */
-  
-  fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /*
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
    * Allow only vertical resizing of textareas.
    */
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  /* ==========================================================================
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
      Author's custom styles
      ========================================================================== */
-  
-  /* ALGEMEEN */
-  
-  html{
-      font-size: 16px;
-  }
-  
-  body{
-      font-family: Arial;
-  }
-  
-  .container{
-      max-width: 1024px;
-      margin: 0 auto;
-  }
-  
-  header{
-      border-bottom: 1px solid lightgrey;
-      font-size: 1.25rem;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-  }
-  
-  header .container{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-  
-  .logo{
-      height: 5rem;
-  }
-  
-  h1{
-      margin-bottom: 0px;
-  }
-  
-  h1+a{
-      display: block;
-      margin-bottom: 1.5rem;
-  }
-  
-  .msg{
-      margin: 1rem 0;
-      padding: 1rem;
-      background-color: lightblue;
-      border-radius: 4px;
-  }
-  
-  table{
-      width: 100%;
-  }
-  
-  th{
-      text-align: left;
-  }
-  
-  /* HOME */
-  
-  .home{
-      min-height: calc(100vh - 7rem - 1px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  /* MELDINGEN */
-  
-  .form-group{
-      margin: 1rem 0;
-  }
-  
-  label{
-      cursor: pointer;
-      display: inline-block;
-      min-width: 140px;
-      vertical-align: top;
-  }
-  
-  .form-input{
-      width: 600px;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /* ==========================================================================
+
+/* ALGEMEEN */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+
+}
+
+header {
+  border-bottom: 1px solid lightgrey;
+  font-size: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 5rem;
+}
+
+h1 {
+  margin-bottom: 0px;
+}
+
+h1+a {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.msg {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: lightblue;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+/* HOME */
+
+.home {
+  min-height: calc(100vh - 7rem - 1px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MELDINGEN */
+
+.form-group {
+  margin: 1rem 0;
+}
+
+label {
+  cursor: pointer;
+  display: inline-block;
+  min-width: 140px;
+  vertical-align: top;
+}
+
+.form-input {
+  width: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
      Helper classes
      ========================================================================== */
-  
-  /*
+
+/*
    * Hide visually and from screen readers
    */
-  
-  .hidden,
-  [hidden] {
-    display: none !important;
-  }
-  
-  /*
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
    * Hide only visually, but have it available for screen readers:
    * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
    *
@@ -204,46 +205,46 @@
    *    causes content to wrap 1 word per line:
    *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
    */
-  
-  .sr-only {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    /* 1 */
-  }
-  
-  /*
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
    * Extends the .sr-only class to allow the element
    * to be focusable when navigated to via the keyboard:
    * https://www.drupal.org/node/897638
    */
-  
-  .sr-only.focusable:active,
-  .sr-only.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    white-space: inherit;
-    width: auto;
-  }
-  
-  /*
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
    * Hide visually and from screen readers, but maintain layout
    */
-  
-  .invisible {
-    visibility: hidden;
-  }
-  
-  /*
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
    * Clearfix: contain floats
    *
    * For modern browsers
@@ -254,131 +255,135 @@
    * 2. The use of `table` rather than `block` is only necessary if using
    *    `:before` to contain the top-margins of child elements.
    */
-  
-  .clearfix::before,
-  .clearfix::after {
-    content: " ";
-    display: table;
-  }
-  
-  .clearfix::after {
-    clear: both;
-  }
-  
-  /* ==========================================================================
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
      EXAMPLE Media Queries for Responsive Design.
      These examples override the primary ('mobile first') styles.
      Modify as content requires.
      ========================================================================== */
-  
-  @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-  }
-  
-  @media print,
-    (-webkit-min-device-pixel-ratio: 1.25),
-    (min-resolution: 1.25dppx),
-    (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-  }
-  
-  /* ==========================================================================
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
      Print styles.
      Inlined to avoid the additional HTTP request:
      https://www.phpied.com/delay-loading-your-print-css/
      ========================================================================== */
-  
-  @media print {
-    *,
-    *::before,
-    *::after {
-      background: #fff !important;
-      color: #000 !important;
-      /* Black prints faster */
-      box-shadow: none !important;
-      text-shadow: none !important;
-    }
-  
-    a,
-    a:visited {
-      text-decoration: underline;
-    }
-  
-    a[href]::after {
-      content: " (" attr(href) ")";
-    }
-  
-    abbr[title]::after {
-      content: " (" attr(title) ")";
-    }
-  
-    /*
+
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-    a[href^="#"]::after,
-    a[href^="javascript:"]::after {
-      content: "";
-    }
-  
-    pre {
-      white-space: pre-wrap !important;
-    }
-  
-    pre,
-    blockquote {
-      border: 1px solid #999;
-      page-break-inside: avoid;
-    }
-  
-    /*
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
      * Printing Tables:
      * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-    thead {
-      display: table-header-group;
-    }
-  
-    tr,
-    img {
-      page-break-inside: avoid;
-    }
-  
-    p,
-    h2,
-    h3 {
-      orphans: 3;
-      widows: 3;
-    }
-  
-    h2,
-    h3 {
-      page-break-after: avoid;
-    }
-  }
-  
-  
-  tr:nth-child(odd){
-    background-color:lightgrey;
-  }
-  tr:hover {
-    background-color: red;
-  }
-  
-  tr:first-child {
-    background-color: red;
+  thead {
+    display: table-header-group;
   }
 
-.select-board{
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+
+tr:nth-child(odd) {
+  background-color: lightgrey;
+}
+
+tr:hover {
+  background-color: red;
+}
+
+tr:first-child {
+  background-color: red;
+}
+
+.select-board {
   display: flex;
   justify-content: center;
 }
+
 select {
   margin-top: 20px;
   width: 700px;
   height: 40px;
 }
-.boord{
+
+.boord {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -386,41 +391,42 @@ select {
   margin: auto;
   color: white;
   font-family: -apple-system,
-  BlinkMacSystemFont,
-  Segoe UI,
-  Roboto,
-  Noto Sans,
-  Ubuntu,
-  Droid Sans,
-  Helvetica Neue,
-  sans-serif;
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Noto Sans,
+    Ubuntu,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
   width: 95%;
   height: 87vh;
 }
-.colum{
-  width: 30%;
+
+.colum {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--backround2);
   border-radius: 10px;
   height: 560px;
+  width: 30%;
+  padding: 1rem;
   margin: 20px;
-  align-items: center;
-  flex-direction: column;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-  /* box-shadow: 5px 8px 0px var(--shadow); */
-  overflow-y: auto;
-  color: var(--text)
+  overflow: hidden;
+  color: var(--text);
 }
 
-.colum h2{
+.colum h2 {
   color: #000;
   height: 40px;
   margin-top: 15px;
   width: 80%;
   text-align: center;
 }
-.card{
+
+.card {
   margin-top: 20px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   background-color: var(--backround3);
@@ -434,7 +440,7 @@ select {
   flex-direction: column;
 }
 
-.card h3{
+.card h3 {
   margin-left: 10px;
   color: #000;
   height: 100%;
@@ -442,20 +448,22 @@ select {
   font-weight: 600;
 }
 
-.card a{
-    color: var(--lightbg);
-    margin-left: auto;
-    margin-right: 10px;
-    margin-bottom: 6px;
-    display: flex;
-    transition: color 0.2s ease;
+.card a {
+  color: var(--lightbg);
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  display: flex;
+  transition: color 0.2s ease;
 }
-.card .top{
+
+.card .top {
   border-radius: 10px 10px 0px 0px;
   /*width: 100%;*/
-  height: 25px;
+  height: 10px;
 }
-.cButton{
+
+.cButton {
   margin-top: 20px;
   background-color: var(--backround2);
   border: 3px dashed #aeb2b6;
@@ -471,9 +479,10 @@ select {
   transition: background-color 0.2s ease;
 }
 
-.cButton:hover{
-background-color: #e8e8e8;
+.cButton:hover {
+  background-color: #e8e8e8;
 }
+
 .cbutton p {
   margin-top: 500px;
 
@@ -488,12 +497,28 @@ background-color: #e8e8e8;
   padding-bottom: 50px;
 }
 
+.card-container {
+  overflow-y: auto;
+  margin-left: 25px;
+  width: 100%;
+  flex: 1;
+  padding-right: 5px;
+}
+.card-container::-webkit-scrollbar {
+  width: 0px;
+}
+.card-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
 .container-index h1 {
   color: white;
   font-size: 40px;
   text-align: center;
   border-bottom: white 3px solid;
 }
+
 .center {
   margin: 30px auto;
   height: 80px;
@@ -506,7 +531,7 @@ background-color: #e8e8e8;
   transition: background-color 0.2s ease;
 }
 
-.center a{
+.center a {
   text-decoration: none;
   color: white;
 }
@@ -544,36 +569,47 @@ background-color: #e8e8e8;
 .horeca {
   background-image: url("../img/horeca.jpg");
 }
+
 .horeca:hover {
   filter: grayscale(0%);
 }
+
 .techniek {
   background-image: url("../img/techniek.jpg");
 }
+
 .techniek:hover {
   filter: grayscale(0%);
 }
+
 .personeel {
   background-image: url("../img/personeel.png");
 }
+
 .personeel:hover {
   filter: grayscale(0%);
 }
+
 .inkoop {
   background-image: url("../img/inkoop.jpg");
 }
+
 .inkoop:hover {
   filter: grayscale(0%);
 }
+
 .groen {
   background-image: url("../img/groen.jpg");
 }
+
 .groen:hover {
   filter: grayscale(0%);
 }
+
 .klantenservice {
   background-image: url("../img/klantenservice.jpg");
 }
+
 .klantenservice:hover {
   filter: grayscale(0%);
 }

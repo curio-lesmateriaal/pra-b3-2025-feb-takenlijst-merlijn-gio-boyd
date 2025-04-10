@@ -26,69 +26,93 @@
                 <option value="inkoop" <?php if ($afdeling == "inkoop") echo "selected" ?>>Inkoop</option>
                 <option value="groen" <?php if ($afdeling == "groen") echo "selected" ?>>Groen</option>
                 <option value="klantenservice" <?php if ($afdeling == "klantenservice") echo "selected" ?>>Klantenservice</option>
+                <option value="alles" <?php if ($afdeling == "alles") echo "selected" ?>>Alles</option>
             </select>
         </div>
         <div class="boord">
             <div class="colum">
                 <h2 style="border-bottom: 3px solid greenyellow;">To-do</h2>
                 <?php
-                $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'todo'";
-                $statement = $conn->prepare($query);
-                $statement ->execute([":afdeling" => $afdeling]);
+                //todo
+                if ($afdeling === 'alles') {
+                    $query = "SELECT * FROM taken WHERE status = 'todo'";
+                    $statement = $conn->prepare($query);
+                    $statement->execute();
+                } else {
+                    $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'todo'";
+                    $statement = $conn->prepare($query);
+                    $statement->execute([":afdeling" => $afdeling]);
+                }
                 $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
                 ?>
 
-                <?php foreach ($meldingen as $melding): ?>
-                    <div class="card" id="<?php echo $melding['id'] ?>">
-                        <div class="top" style="background-color: greenyellow;"></div>
-                        <h3><?php echo $melding['id'] . ' - ' . $melding['titel']; ?></h3>
-                        <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
-                        
-                    </div>   
-                <?php endforeach; ?>
+                <div class="card-container">
+                    <?php foreach ($meldingen as $melding): ?>
+                        <div class="card" id="<?php echo $melding['id'] ?>">
+                            <div class="top" style="background-color: greenyellow;"></div>
+                            <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling']; ?></h3>
+                            <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
                 <button class="cButton" onclick="button()">+</button>
             </div>
 
             <div class="colum">
                 <h2 style="border-bottom: 3px solid greenyellow;">Doing</h2>
                 <?php
-                $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'doing'";
-                $statement = $conn->prepare($query);
-                $statement ->execute([":afdeling" => $afdeling]);
+                //doing
+                if ($afdeling === 'alles') {
+                    $query = "SELECT * FROM taken WHERE status = 'doing'";
+                    $statement = $conn->prepare($query);
+                    $statement->execute();
+                } else {
+                    $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'doing'";
+                    $statement = $conn->prepare($query);
+                    $statement->execute([":afdeling" => $afdeling]);
+                }
                 $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
                 ?>
 
-                <?php foreach ($meldingen as $melding): ?>
-                    <div class="card" id="<?php echo $melding['id'] ?>">
-                        <div class="top" style="background-color: greenyellow;"></div>
-                        <h3><?php echo $melding['id'] . ' - ' . $melding['titel']; ?></h3>
-                        <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
-                        
-                    </div>   
-                <?php endforeach; ?>
+                <div class="card-container">
+                    <?php foreach ($meldingen as $melding): ?>
+                        <div class="card" id="<?php echo $melding['id'] ?>">
+                            <div class="top" style="background-color: greenyellow;"></div>
+                            <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling']; ?></h3>
+                            <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
                 <button class="cButton" onclick="button()">+</button>
             </div>
 
             <div class="colum">
                 <h2 style="border-bottom: 3px solid greenyellow;">Done</h2>
                 <?php
-                $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'done'";
-                $statement = $conn->prepare($query);
-                $statement ->execute([":afdeling" => $afdeling]);
+                //done
+                if ($afdeling === 'alles') {
+                    $query = "SELECT * FROM taken WHERE status = 'done'";
+                    $statement = $conn->prepare($query);
+                    $statement->execute();
+                } else {
+                    $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'done'";
+                    $statement = $conn->prepare($query);
+                    $statement->execute([":afdeling" => $afdeling]);
+                }
                 $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
                 ?>
-
-                <?php foreach ($meldingen as $melding): ?>
-                    <div class="card" id="<?php echo $melding['id'] ?>">
-                        <div class="top" style="background-color: greenyellow;"></div>
-                        <h3><?php echo $melding['id'] . ' - ' . $melding['titel']; ?></h3>
-                        <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
-                        
-                    </div>   
-                <?php endforeach; ?>
+                <div class="card-container">
+                    <?php foreach ($meldingen as $melding): ?>
+                        <div class="card" id="<?php echo $melding['id'] ?>">
+                            <div class="top" style="background-color: greenyellow;"></div>
+                            <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling']; ?></h3>
+                            <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
                 <button class="cButton" onclick="button()">+</button>
             </div>
-            
+
         </div>
     </div>
 
@@ -99,9 +123,9 @@
             window.location.href = "create.php";
         }
         //afdeling manager:
-        document.getElementById("boordNaam").addEventListener('change',() =>{
-            let naam =document.getElementById('boordNaam').value;
-            window.location.href ="board.php?afdeling="+naam;
+        document.getElementById("boordNaam").addEventListener('change', () => {
+            let naam = document.getElementById('boordNaam').value;
+            window.location.href = "board.php?afdeling=" + naam;
         })
     </script>
 </body>
