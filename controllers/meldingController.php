@@ -32,17 +32,20 @@ if($action == 'create') {
 if($action == 'edit') {
     $id = $_POST['id'];
     $titel = $_POST['titel'];
-
+    $status = $_POST['status'];
+    $afdeling = $_POST['afdeling'];
+    $beschrijving = $_POST['beschrijving'];
 
     //1. Verbinding
     require_once '../backend/conn.php';
-    //require_once(__DIR__ . '/backend/conn.php');
 
-    //2. Query
+    //2. Query (zonder foutieve komma)
     $query = "
     UPDATE taken
-    SET titel = :titel
-
+    SET titel = :titel,
+        status = :status,
+        afdeling = :afdeling,
+        beschrijving = :beschrijving
     WHERE id = :id
     ";
 
@@ -52,8 +55,12 @@ if($action == 'edit') {
     //4. Execute
     $statement->execute([
         ":titel" => $titel,
+        ":status" => $status,
+        ":afdeling" => $afdeling,
+        ":beschrijving" => $beschrijving,
         ":id" => $id
     ]);
+
     header("Location:'/../../board.php?afdeling=horeca");
 }
 if ($action == 'delete' ) {
