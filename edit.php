@@ -35,9 +35,9 @@
             <div class="form-group">
                 <label for="status">Status:</label>
                 <select name="status" id="status" class="form-input" required>
-                    <option value="todo" <?php if ($melding['status'] == 'todo') echo 'selected'; ?>>Open</option>
-                    <option value="doing" <?php if ($melding['status'] == 'doing') echo 'selected'; ?>>Bezig</option>
-                    <option value="done" <?php if ($melding['status'] == 'done') echo 'selected'; ?>>Afgerond</option>
+                    <option value="todo" <?php if ($melding['status'] == 'todo') echo 'selected'; ?>>Todo</option>
+                    <option value="doing" <?php if ($melding['status'] == 'doing') echo 'selected'; ?>>Doing</option>
+                    <option value="done" <?php if ($melding['status'] == 'done') echo 'selected'; ?>>Done</option>
                 </select>
             </div>
 
