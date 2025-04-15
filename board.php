@@ -1,3 +1,12 @@
+<?php session_start(); 
+require_once 'backend/config.php';
+
+if(!isset($_SESSION['user_id'])) {
+    $msg = "je moet ingelogd zijn om deze pagina te zien";
+    header('Location:' . $base_url . '/login.php?msg='.$msg);
+}
+
+?>
 <!doctype html>
 <html lang="nl">
 
@@ -17,6 +26,7 @@
             }
 
             $afdeling = $_GET['afdeling'];
+            $user = $_SESSION['user_id'];
             require_once(__DIR__ . '../backend/conn.php');
             ?>
             <div class="select-board">
@@ -35,14 +45,20 @@
                     <h2 style="border-bottom: 3px solid greenyellow;">To-do</h2>
                     <?php
                     //todo
+                    
                     if ($afdeling === 'alles') {
-                        $query = "SELECT * FROM taken WHERE status = 'todo'";
+                        $query = "SELECT * FROM taken WHERE status = 'todo' AND user = :user";
                         $statement = $conn->prepare($query);
-                        $statement->execute();
+                        $statement->execute([
+                            ":user" => $user,
+                        ]);
                     } else {
-                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'todo'";
+                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'todo' AND user = :user";
                         $statement = $conn->prepare($query);
-                        $statement->execute([":afdeling" => $afdeling]);
+                        $statement->execute([
+                            ":afdeling" => $afdeling,
+                            ":user" => $user,
+                    ]);
                     }
                     $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
                     ?>
@@ -64,13 +80,18 @@
                     <?php
                     //doing
                     if ($afdeling === 'alles') {
-                        $query = "SELECT * FROM taken WHERE status = 'doing'";
+                        $query = "SELECT * FROM taken WHERE status = 'doing' AND user = :user";
                         $statement = $conn->prepare($query);
-                        $statement->execute();
+                        $statement->execute([
+                            ":user" => $user,
+                        ]);
                     } else {
-                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'doing'";
+                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'doing' AND user = :user";
                         $statement = $conn->prepare($query);
-                        $statement->execute([":afdeling" => $afdeling]);
+                        $statement->execute([
+                            ":afdeling" => $afdeling,
+                            ":user" => $user,
+                    ]);
                     }
                     $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
                     ?>
@@ -92,13 +113,18 @@
                     <?php
                     //done
                     if ($afdeling === 'alles') {
-                        $query = "SELECT * FROM taken WHERE status = 'done'";
+                        $query = "SELECT * FROM taken WHERE status = 'done' AND user = :user";
                         $statement = $conn->prepare($query);
-                        $statement->execute();
+                        $statement->execute([
+                            ":user" => $user,
+                        ]);
                     } else {
-                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'done'";
+                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'done' AND user = :user";
                         $statement = $conn->prepare($query);
-                        $statement->execute([":afdeling" => $afdeling]);
+                        $statement->execute([
+                            ":afdeling" => $afdeling,
+                            ":user" => $user,
+                    ]);
                     }
                     $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
                     ?>

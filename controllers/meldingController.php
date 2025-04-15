@@ -1,4 +1,5 @@
 <?php
+session_start();
 $action = $_POST['action'];
 
 if($action == 'create') {
@@ -7,12 +8,15 @@ if($action == 'create') {
     $afdeling = $_POST['afdeling'];
     $beschrijving = $_POST['beschrijving'];
 
+
+    $user = $_SESSION['user_id'];
+
     //1. Verbinding
     require_once '../backend/conn.php';
 
     //2. Query
-    $query = "INSERT INTO taken (titel, beschrijving, afdeling, status)
-        VALUES(:titel, :beschrijving, :afdeling, :status)";
+    $query = "INSERT INTO taken (titel, beschrijving, afdeling, status, user)
+        VALUES(:titel, :beschrijving, :afdeling, :status, :user)";
 
     //3. prepare
     $statement = $conn->prepare($query);
@@ -23,6 +27,7 @@ if($action == 'create') {
         ":beschrijving" => $beschrijving,
         ":afdeling" => $afdeling,
         ":status" => $status,
+        ":user" => $user,
     ]);
 
     //index

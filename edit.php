@@ -1,3 +1,13 @@
+<?php session_start(); 
+require_once 'backend/config.php';
+
+if(!isset($_SESSION['user_id'])) {
+    $msg = "je moet ingelogd zijn om deze pagina te zien";
+    header('Location:' . $base_url . '/login.php?msg='.$msg);
+}
+
+?>
+
 <!doctype html>
 <html lang="nl">
 
