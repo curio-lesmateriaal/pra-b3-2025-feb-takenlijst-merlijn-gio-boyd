@@ -159,6 +159,7 @@ th {
 
 .form-group {
   margin: 1rem 0;
+  
 }
 
 label {
@@ -166,6 +167,7 @@ label {
   display: inline-block;
   min-width: 140px;
   vertical-align: top;
+  background-color: white;
 }
 
 .form-input {
