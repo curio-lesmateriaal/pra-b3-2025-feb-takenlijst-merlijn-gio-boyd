@@ -3,7 +3,7 @@
 <html lang="nl">
 
 <head>
-    <title></title>
+    <title>index</title>
     <?php require_once 'resources/views/head.php'; ?>
 </head>
 <body>

@@ -26,6 +26,7 @@ if(!isset($_SESSION['user_id'])) {
             }
 
             $afdeling = $_GET['afdeling'];
+
             $user = $_SESSION['user_id'];
             require_once(__DIR__ . '../backend/conn.php');
             ?>
@@ -47,13 +48,13 @@ if(!isset($_SESSION['user_id'])) {
                     //todo
                     
                     if ($afdeling === 'alles') {
-                        $query = "SELECT * FROM taken WHERE status = 'todo' AND user = :user";
+                        $query = "SELECT * FROM taken WHERE status = 'todo' AND user = :user ORDER BY deadline";
                         $statement = $conn->prepare($query);
                         $statement->execute([
                             ":user" => $user,
                         ]);
                     } else {
-                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'todo' AND user = :user";
+                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'todo' AND user = :user ORDER BY deadline";
                         $statement = $conn->prepare($query);
                         $statement->execute([
                             ":afdeling" => $afdeling,
@@ -67,7 +68,7 @@ if(!isset($_SESSION['user_id'])) {
                         <?php foreach ($meldingen as $melding): ?>
                             <div class="card" id="<?php echo $melding['id'] ?>">
                                 <div class="top" style="background-color: greenyellow;"></div>
-                                <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling']; ?></h3>
+                                <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling'] . '<br>Deadline: ' . $melding['deadline'];?></h3>
                                 <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
                             </div>
                         <?php endforeach; ?>
@@ -80,13 +81,13 @@ if(!isset($_SESSION['user_id'])) {
                     <?php
                     //doing
                     if ($afdeling === 'alles') {
-                        $query = "SELECT * FROM taken WHERE status = 'doing' AND user = :user";
+                        $query = "SELECT * FROM taken WHERE status = 'doing' AND user = :user ORDER BY deadline";
                         $statement = $conn->prepare($query);
                         $statement->execute([
                             ":user" => $user,
                         ]);
                     } else {
-                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'doing' AND user = :user";
+                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'doing' AND user = :user ORDER BY deadline";
                         $statement = $conn->prepare($query);
                         $statement->execute([
                             ":afdeling" => $afdeling,
@@ -100,7 +101,7 @@ if(!isset($_SESSION['user_id'])) {
                         <?php foreach ($meldingen as $melding): ?>
                             <div class="card" id="<?php echo $melding['id'] ?>">
                                 <div class="top" style="background-color: orange;"></div>
-                                <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling']; ?></h3>
+                                <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling'] . '<br>Deadline: ' . $melding['deadline'];?></h3>
                                 <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
                             </div>
                         <?php endforeach; ?>
@@ -113,13 +114,13 @@ if(!isset($_SESSION['user_id'])) {
                     <?php
                     //done
                     if ($afdeling === 'alles') {
-                        $query = "SELECT * FROM taken WHERE status = 'done' AND user = :user";
+                        $query = "SELECT * FROM taken WHERE status = 'done' AND user = :user ORDER BY deadline";
                         $statement = $conn->prepare($query);
                         $statement->execute([
                             ":user" => $user,
                         ]);
                     } else {
-                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'done' AND user = :user";
+                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling AND status = 'done' AND user = :user ORDER BY deadline";
                         $statement = $conn->prepare($query);
                         $statement->execute([
                             ":afdeling" => $afdeling,
@@ -132,7 +133,7 @@ if(!isset($_SESSION['user_id'])) {
                         <?php foreach ($meldingen as $melding): ?>
                             <div class="card" id="<?php echo $melding['id'] ?>">
                                 <div class="top" style="background-color: purple;"></div>
-                                <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling']; ?></h3>
+                                <h3><?php echo $melding['id'] . ' - ' . $melding['titel'] . '<br>Afdeling: ' . $melding['afdeling'] . '<br>Deadline: ' . $melding['deadline'];?></h3>
                                 <a class="fa-solid fa-pencil" href="edit.php?id=<?php echo $melding['id']; ?>"></a>
                             </div>
                         <?php endforeach; ?>

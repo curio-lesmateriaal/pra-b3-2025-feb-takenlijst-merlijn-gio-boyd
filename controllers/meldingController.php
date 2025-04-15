@@ -7,6 +7,7 @@ if($action == 'create') {
     $status = $_POST['status'];
     $afdeling = $_POST['afdeling'];
     $beschrijving = $_POST['beschrijving'];
+    $deadline = $_POST['deadline'];
 
 
     $user = $_SESSION['user_id'];
@@ -15,8 +16,8 @@ if($action == 'create') {
     require_once '../backend/conn.php';
 
     //2. Query
-    $query = "INSERT INTO taken (titel, beschrijving, afdeling, status, user)
-        VALUES(:titel, :beschrijving, :afdeling, :status, :user)";
+    $query = "INSERT INTO taken (titel, beschrijving, afdeling, status, deadline ,user)
+        VALUES(:titel, :beschrijving, :afdeling, :status, :deadline, :user)";
 
     //3. prepare
     $statement = $conn->prepare($query);
@@ -27,6 +28,7 @@ if($action == 'create') {
         ":beschrijving" => $beschrijving,
         ":afdeling" => $afdeling,
         ":status" => $status,
+        ":deadline" => $deadline,
         ":user" => $user,
     ]);
 
@@ -40,6 +42,7 @@ if($action == 'edit') {
     $status = $_POST['status'];
     $afdeling = $_POST['afdeling'];
     $beschrijving = $_POST['beschrijving'];
+    $deadline = $_POST['deadline'];
 
     //1. Verbinding
     require_once '../backend/conn.php';
@@ -50,7 +53,8 @@ if($action == 'edit') {
     SET titel = :titel,
         status = :status,
         afdeling = :afdeling,
-        beschrijving = :beschrijving
+        beschrijving = :beschrijving,
+        deadline = :deadline
     WHERE id = :id
     ";
 
@@ -63,6 +67,7 @@ if($action == 'edit') {
         ":status" => $status,
         ":afdeling" => $afdeling,
         ":beschrijving" => $beschrijving,
+        ":deadline" => $deadline,
         ":id" => $id
     ]);
 

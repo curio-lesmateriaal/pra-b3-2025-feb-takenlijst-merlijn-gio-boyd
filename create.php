@@ -1,9 +1,9 @@
-<?php session_start(); 
+<?php session_start();
 require_once 'backend/config.php';
 
-if(!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['user_id'])) {
     $msg = "je moet ingelogd zijn om deze pagina te zien";
-    header('Location:' . $base_url . '/login.php?msg='.$msg);
+    header('Location:' . $base_url . '/login.php?msg=' . $msg);
 }
 
 ?>
@@ -12,7 +12,7 @@ if(!isset($_SESSION['user_id'])) {
 <html lang="nl">
 
 <head>
-    <title>testpagina</title>
+    <title>Create</title>
     <?php require_once 'resources/views/head.php'; ?>
 </head>
 
@@ -20,22 +20,18 @@ if(!isset($_SESSION['user_id'])) {
     <?php require_once 'resources/views/header.php'; ?>
 
     <main>
-        <div class="container">
+        <div class="create-container">
             <form action="<?php echo $base_url; ?>/controllers/meldingController.php" method="POST">
                 <input type="hidden" name="action" value="create">
 
-                <!--<div class="user">
-                <label for="user">Gebruikers Naam:</label>
-                <input type="text" name="user" id="user" class="form-input">
-            </div>-->
-
+                <h1>Create</h1>
                 <div class="form-group">
                     <label for="titel">Naam Titel:</label>
                     <input type="text" name="titel" id="titel" class="form-input">
                 </div>
 
                 <div class="form-group">
-                    <label for="status">Status</label>
+                    <label for="status">Status:</label>
                     <select name="status">
                         <option value="todo">Todo</option>
                         <option value="doing">Doing</option>
@@ -44,7 +40,7 @@ if(!isset($_SESSION['user_id'])) {
                 </div>
 
                 <div class="form-group">
-                    <label for="afdeling">Afdeling</label>
+                    <label for="afdeling">Afdeling:</label>
                     <select name="afdeling">
                         <option value="horeca">Horeca</option>
                         <option value="personeel">Personeel</option>
@@ -56,8 +52,16 @@ if(!isset($_SESSION['user_id'])) {
                 </div>
 
                 <div class="beschrijving">
-                    <label for="beschrijving">Beschrijving</label>
+                    <label for="beschrijving">Beschrijving:</label>
                     <textarea name="beschrijving" id="beschrijving" class="form-input" rows="4"></textarea>
+                </div>
+
+                <?php
+                $today = date('Y-m-d')
+                ?>
+                <div class="form-group">
+                    <label for="deadline">Deadline:</label>
+                    <input type="date" name="deadline" id="deadline" value="<?php echo $today; ?>">
                 </div>
 
 

@@ -12,7 +12,7 @@ if(!isset($_SESSION['user_id'])) {
 <html lang="nl">
 
 <head>
-    <title>testpagina</title>
+    <title>Edit</title>
     <?php require_once 'resources/views/head.php'; ?>
 </head>
 
@@ -32,7 +32,7 @@ if(!isset($_SESSION['user_id'])) {
     $melding = $statement->fetch(PDO::FETCH_ASSOC);
     ?>
     <main>
-        <div class="container">
+        <div class="create-container">
             <form action="<?php echo $base_url; ?>/controllers/meldingController.php" method="POST">
                 <input type="hidden" name="action" value="edit">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -66,6 +66,11 @@ if(!isset($_SESSION['user_id'])) {
                 <div class="form-group">
                     <label for="beschrijving">Beschrijving:</label>
                     <textarea name="beschrijving" id="beschrijving" class="form-input" rows="4" required><?php echo $melding['beschrijving']; ?></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="deadline">Deadline: </label>
+                    <input type="date" name="deadline" id="deadline" value="<?php echo $melding['deadline'];?>">
                 </div>
 
                 <input type="submit" value="Melding opslaan">

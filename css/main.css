@@ -167,7 +167,8 @@ label {
   display: inline-block;
   min-width: 140px;
   vertical-align: top;
-  background-color: white;
+  background-color: grey;
+
 }
 
 .form-input {
@@ -391,7 +392,7 @@ select {
   justify-content: space-between;
   align-items: center;
   background-color: var(--backround);
-  margin: auto;
+
   color: white;
   font-family: -apple-system,
     BlinkMacSystemFont,
@@ -700,4 +701,16 @@ main {
 }
 .mainInlog button:hover{
   background: #6d44b8;
+}
+
+.create-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  background-color: grey;
+  padding: 5px 5px 20px 20px;
+  border-radius: 20px;
+}
+
+.select-board select{
+  border-radius: 5px;
 }
