@@ -15,8 +15,8 @@
                 echo "<div class='msg'>" . $_GET['msg'] . "</div>";
             } ?>
 
-            <h1>BOARDEN</h1>
-            <a href="<?php echo $base_url; ?>/board.php?afdeling=alles"><button class="center">TOON ALLE BOARDEN</button></a>
+            <h1>BOORDEN</h1>
+            <a href="<?php echo $base_url; ?>/board.php?afdeling=alles"><button class="center">TOON ALLE BOORDEN</button></a>
             <div class="grid-container">
                 <div class="grid-item">
                     <a href="<?php echo $base_url; ?>/board.php?afdeling=horeca"><button class="horeca">HORECA</button></a>

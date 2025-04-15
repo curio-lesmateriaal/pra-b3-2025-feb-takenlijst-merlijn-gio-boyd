@@ -714,3 +714,32 @@ main {
 .select-board select{
   border-radius: 5px;
 }
+header{
+  font-size: 1.25rem;
+  padding-top: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid lightgrey;
+  font-size: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: grey;
+}
+
+nav a:hover{
+  border: 2px solid black;
+}
+nav a {
+  color: var(--p);
+  text-decoration: none;
+}
+
+header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+
+}
+span {
+  margin-left: 15px;
+}
