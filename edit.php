@@ -37,6 +37,7 @@ if(!isset($_SESSION['user_id'])) {
                 <input type="hidden" name="action" value="edit">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
 
+                <h1>Edit</h1>
                 <div class="form-group">
                     <label for="titel">Naam Titel:</label>
                     <input type="text" name="titel" id="titel" class="form-input" value="<?php echo $melding['titel']; ?>" required>
