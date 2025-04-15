@@ -16,7 +16,7 @@
 
                 <div class="login">
                     <form action="<?php echo $base_url; ?>/controllers/loginController.php" method="post">
-                        <label for="chk" aria-hidden="true">Login</label>
+                        <label for="chk" aria-hidden="true" style="background-color: white;">Login</label>
                         <input type="text" name="username" placeholder="user1 t/m 3" required="">
                         <input type="password" name="password" placeholder="password1 t/m 3" required="">
                         <button>Login</button>
